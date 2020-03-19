@@ -24,7 +24,7 @@ $ gem install spinnaker-sidekiq
 Mount the engine in your rails application.
 
 ``` ruby
-mount Spinnaker::Sidekiq, at: "/spinnaker/sidekiq"
+mount Spinnaker::Sidekiq::Engine, at: "/spinnaker/sidekiq"
 ```
 
 In spinnaker, create a webhook stage with the following configuration:
