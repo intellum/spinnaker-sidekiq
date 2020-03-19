@@ -6,8 +6,12 @@ module Spinnaker
       include Engine.routes.url_helpers
 
       setup do
-        ENV["SPINNAKER_API_AUTHENTICATION_TOKEN"] = "secret"
+        Spinnaker::Sidekiq.api_token = "secret"
         @credentials = ActionController::HttpAuthentication::Token.encode_credentials("secret")
+      end
+
+      teardown do
+        Spinnaker::Sidekiq.api_token = nil
       end
 
       test "status without authentication fails" do

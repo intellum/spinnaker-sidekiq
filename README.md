@@ -27,6 +27,12 @@ Mount the engine in your rails application.
 mount Spinnaker::Sidekiq::Engine, at: "/spinnaker/sidekiq"
 ```
 
+API token can be specified by environment variable `SPINNAKER_SIDEKIQ_API_TOKEN` or doing:
+
+``` ruby
+Spinnaker::Sidekiq.api_token = 'SECRET_VALUE'
+```
+
 In spinnaker, create a webhook stage with the following configuration:
 
 - Webhook URL: `https://example.com/spinnaker/sidekiq/quiet_all`

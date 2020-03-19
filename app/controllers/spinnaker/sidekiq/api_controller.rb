@@ -40,7 +40,7 @@ module Spinnaker
       end
 
       def api_authentication_token
-        ENV.fetch("SPINNAKER_API_AUTHENTICATION_TOKEN") { raise "Missing API token!" }
+        Spinnaker::Sidekiq.api_token
       end
     end
   end
