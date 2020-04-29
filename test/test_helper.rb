@@ -17,6 +17,15 @@ if ActiveSupport::TestCase.respond_to?(:fixture_path=)
   ActiveSupport::TestCase.fixtures :all
 end
 
+# Enable protect from forgery when running tests.
+#
+# This is needed since that is the default on ActionController::Base
+# from Rails 5.2 On previous applications it would be defined on the
+# application's ApplicationController which wouldn't affect the engine
+Spinnaker::Sidekiq::ApplicationController.class_eval do
+  protect_from_forgery with: :exception
+end
+
 require "sidekiq"
 require "sidekiq/testing"
 require "sidekiq/api"

@@ -6,6 +6,9 @@ module Spinnaker
     class ApiController < ApplicationController
       before_action :authenticate
 
+      # Disable CSRF protection for all actions
+      protect_from_forgery only: []
+
       # This will be used by a webhook stage to quiet all workers during deployment
       def quiet_all
         ps = ::Sidekiq::ProcessSet.new
