@@ -1,7 +1,7 @@
 PATH
   remote: ..
   specs:
-    spinnaker-sidekiq (0.1.0)
+    spinnaker-sidekiq (0.1.1)
       rails (>= 5.0)
       sidekiq (>= 4.0)
 
@@ -69,6 +69,7 @@ GEM
       thor (>= 0.14.0)
     ast (2.4.0)
     builder (3.2.4)
+    byebug (11.1.3)
     concurrent-ruby (1.1.6)
     connection_pool (2.2.2)
     crass (1.0.6)
@@ -174,8 +175,9 @@ PLATFORMS
 
 DEPENDENCIES
   appraisal
+  byebug
   gem-release
-  rails (~> 6.0)
+  rails (~> 6.0.0)
   spinnaker-sidekiq!
   sqlite3
   standard
