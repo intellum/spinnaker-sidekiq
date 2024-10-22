@@ -69,13 +69,42 @@ module Spinnaker
       end
 
       test "quiet_all quiets processes" do
-        process = MiniTest::Mock.new
+        process = Minitest::Mock.new
         process.expect(:quiet!, nil)
 
         ::Sidekiq::ProcessSet.stub :new, [process] do
           post "/spinnaker/sidekiq/quiet_all",
             headers: {"HTTP_AUTHORIZATION" => @credentials}
         end
+      end
+
+      test "terminate_all without authentication fails" do
+        post "/spinnaker/sidekiq/terminate_all"
+        assert_response 401
+      end
+
+      test "terminate_all sends shutdown signal and quiets workers" do
+        process = Minitest::Mock.new
+        process.expect(:quiet!, nil)
+
+        redis = Minitest::Mock.new
+        redis.expect(:publish, nil) do |channel, time|
+          assert_equal "sidekiq:terminate", channel
+          assert_equal Time.now.to_i, time
+        end
+
+        ::Sidekiq::ProcessSet.stub :new, [process] do
+          ::Sidekiq.stub :redis, true, redis do
+            post "/spinnaker/sidekiq/terminate_all",
+              headers: {"HTTP_AUTHORIZATION" => @credentials}
+          end
+        end
+
+        assert_response :success
+        assert_equal "Terminate signal sent to Sidekiq workers", response.body
+
+        process.verify
+        redis.verify
       end
     end
   end
