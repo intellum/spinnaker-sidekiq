@@ -75,6 +75,7 @@ module Spinnaker
         ::Sidekiq::ProcessSet.stub :new, [process] do
           post "/spinnaker/sidekiq/quiet_all",
             headers: {"HTTP_AUTHORIZATION" => @credentials}
+          assert_response :success
         end
       end
 

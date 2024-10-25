@@ -1,29 +1,17 @@
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
-require File.expand_path("../../test/dummy/config/environment.rb", __FILE__)
-ActiveRecord::Migrator.migrations_paths = [File.expand_path("../../test/dummy/db/migrate", __FILE__)]
-ActiveRecord::Migrator.migrations_paths << File.expand_path("../../db/migrate", __FILE__)
+
+require_relative "../test/dummy/config/environment"
+ActiveRecord::Migrator.migrations_paths = [File.expand_path("../test/dummy/db/migrate", __dir__)]
+ActiveRecord::Migrator.migrations_paths << File.expand_path("../db/migrate", __dir__)
 require "rails/test_help"
 
-# Filter out Minitest backtrace while allowing backtrace from other libraries
-# to be shown.
-Minitest.backtrace_filter = Minitest::BacktraceFilter.new
-
 # Load fixtures from the engine
-if ActiveSupport::TestCase.respond_to?(:fixture_path=)
-  ActiveSupport::TestCase.fixture_path = File.expand_path("../fixtures", __FILE__)
-  ActionDispatch::IntegrationTest.fixture_path = ActiveSupport::TestCase.fixture_path
-  ActiveSupport::TestCase.file_fixture_path = ActiveSupport::TestCase.fixture_path + "/files"
+if ActiveSupport::TestCase.respond_to?(:fixture_paths=)
+  ActiveSupport::TestCase.fixture_paths = [File.expand_path("fixtures", __dir__)]
+  ActionDispatch::IntegrationTest.fixture_paths = ActiveSupport::TestCase.fixture_paths
+  ActiveSupport::TestCase.file_fixture_path = File.expand_path("fixtures", __dir__) + "/files"
   ActiveSupport::TestCase.fixtures :all
-end
-
-# Enable protect from forgery when running tests.
-#
-# This is needed since that is the default on ActionController::Base
-# from Rails 5.2 On previous applications it would be defined on the
-# application's ApplicationController which wouldn't affect the engine
-Spinnaker::Sidekiq::ApplicationController.class_eval do
-  protect_from_forgery with: :exception
 end
 
 require "sidekiq"

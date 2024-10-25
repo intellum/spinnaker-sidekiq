@@ -1,3 +1,4 @@
+require "spinnaker/sidekiq/version"
 require "spinnaker/sidekiq/engine"
 
 module Spinnaker

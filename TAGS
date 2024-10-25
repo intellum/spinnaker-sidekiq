@@ -1,0 +1,287 @@
+
+.dir-locals.el,0
+
+.envrc,0
+
+.standard.yml,0
+
+app/controllers/spinnaker/sidekiq/application_controller.rb,145
+module SpinnakerSpinnaker1,0
+  module SidekiqSidekiq2,17
+    class ApplicationController < ActionController::BaseApplicationController3,34
+
+app/controllers/spinnaker/sidekiq/api_controller.rb,357
+module SpinnakerSpinnaker4,85
+  module SidekiqSidekiq5,102
+    class ApiController < ApplicationControllerApiController6,119
+      def quiet_allquiet_all13,371
+      def statusstatus20,625
+      def terminate_allterminate_all34,1050
+      def authenticateauthenticate45,1332
+      def api_authentication_tokenapi_authentication_token54,1685
+
+test/dummy/app/mailers/application_mailer.rb,67
+class ApplicationMailer < ActionMailer::BaseApplicationMailer1,0
+
+test/dummy/app/models/application_record.rb,67
+class ApplicationRecord < ActiveRecord::BaseApplicationRecord1,0
+
+test/dummy/app/models/concerns/.keep,0
+
+test/dummy/app/jobs/application_job.rb,58
+class ApplicationJob < ActiveJob::BaseApplicationJob1,0
+
+test/dummy/app/controllers/application_controller.rb,79
+class ApplicationController < ActionController::BaseApplicationController1,0
+
+test/dummy/app/controllers/concerns/.keep,0
+
+test/dummy/app/views/layouts/application.html.erb,0
+
+test/dummy/app/views/layouts/mailer.html.erb,0
+
+test/dummy/app/views/layouts/mailer.text.erb,0
+
+test/dummy/app/assets/config/manifest.js,0
+
+test/dummy/app/assets/images/.keep,0
+
+test/dummy/app/assets/javascripts/cable.js,50
+(function() {anonymousFunctionc8adf8bc01008,254
+
+test/dummy/app/assets/javascripts/application.js,0
+
+test/dummy/app/assets/javascripts/channels/.keep,0
+
+test/dummy/app/assets/stylesheets/application.css,0
+
+test/dummy/app/helpers/application_helper.rb,47
+module ApplicationHelperApplicationHelper1,0
+
+test/dummy/app/channels/application_cable/connection.rb,112
+module ApplicationCableApplicationCable1,0
+  class Connection < ActionCable::Connection::BaseConnection2,24
+
+test/dummy/app/channels/application_cable/channel.rb,103
+module ApplicationCableApplicationCable1,0
+  class Channel < ActionCable::Channel::BaseChannel2,24
+
+test/dummy/bin/update,109
+APP_ROOT = Pathname.new File.expand_path('../../', __FILE__)APP_ROOT7,111
+def system!(*args)system!9,173
+
+test/dummy/bin/rake,0
+
+test/dummy/bin/setup,90
+APP_ROOT = File.expand_path("..", __dir__)APP_ROOT5,74
+def system!(*args)system!7,118
+
+test/dummy/bin/bundle,0
+
+test/dummy/bin/yarn,63
+VENDOR_PATH = File.expand_path('..', __dir__)VENDOR_PATH2,20
+
+test/dummy/bin/rails,76
+APP_PATH = File.expand_path("../config/application", __dir__)APP_PATH2,20
+
+test/dummy/config/secrets.yml,0
+
+test/dummy/config/routes.rb,0
+
+test/dummy/config/locales/en.yml,111
+  hello: "Hello world"hello33,825
+  hello: "Hello world"hello33,825
+  hello: "Hello world"en.hello33,825
+
+test/dummy/config/cable.yml,0
+
+test/dummy/config/environments/production.rb,0
+
+test/dummy/config/environments/development.rb,0
+
+test/dummy/config/environments/test.rb,0
+
+test/dummy/config/spring.rb,0
+
+test/dummy/config/environment.rb,0
+
+test/dummy/config/storage.yml,0
+
+test/dummy/config/application.rb,85
+module DummyDummy9,192
+  class Application < Rails::ApplicationApplication10,205
+
+test/dummy/config/puma.rb,0
+
+test/dummy/config/database.yml,32
+default: &defaultdefault7,122
+
+test/dummy/config/boot.rb,0
+
+test/dummy/config/initializers/application_controller_renderer.rb,0
+
+test/dummy/config/initializers/backtrace_silencers.rb,0
+
+test/dummy/config/initializers/mime_types.rb,0
+
+test/dummy/config/initializers/filter_parameter_logging.rb,0
+
+test/dummy/config/initializers/wrap_parameters.rb,0
+
+test/dummy/config/initializers/cookies_serializer.rb,0
+
+test/dummy/config/initializers/permissions_policy.rb,0
+
+test/dummy/config/initializers/content_security_policy.rb,0
+
+test/dummy/config/initializers/inflections.rb,0
+
+test/dummy/config/initializers/new_framework_defaults_7_0.rb,0
+
+test/dummy/config.ru,0
+
+test/dummy/Rakefile,0
+
+test/dummy/public/favicon.ico,0
+
+test/dummy/public/422.html,199
+  <title>The change you wanted was rejected (422)</title>The change you wanted was rejected (422)4,30
+      <h1>The change you wanted was rejected.</h1>The change you wanted was rejected.61,1461
+
+test/dummy/public/apple-touch-icon.png,0
+
+test/dummy/public/500.html,211
+  <title>We're sorry, but something went wrong (500)</title>We're sorry, but something went wrong (500)4,30
+      <h1>We're sorry, but something went wrong.</h1>We're sorry, but something went wrong.61,1464
+
+test/dummy/public/404.html,235
+  <title>The page you were looking for doesn't exist (404)</title>The page you were looking for doesn't exist (404)4,30
+      <h1>The page you were looking for doesn't exist.</h1>The page you were looking for doesn't exist.61,1470
+
+test/dummy/public/apple-touch-icon-precomposed.png,0
+
+test/dummy/package.json,99
+  "name": "dummy",name2,2
+  "private": true,private3,21
+  "dependencies": {}dependencies4,40
+
+test/dummy/lib/assets/.keep,0
+
+test/dummy/db/schema.rb,0
+
+test/dummy/db/migrate/20241022192403_create_active_storage_variant_records.active_storage.rb,246
+class CreateActiveStorageVariantRecords < ActiveRecord::Migration[6.0]CreateActiveStorageVariantRecords2,71
+  def changechange3,142
+    def primary_key_typeprimary_key_type17,698
+    def blobs_primary_key_typeblobs_primary_key_type22,846
+
+test/dummy/db/migrate/20241022192402_add_service_name_to_active_storage_blobs.active_storage.rb,153
+class AddServiceNameToActiveStorageBlobs < ActiveRecord::Migration[6.0]AddServiceNameToActiveStorageBlobs2,71
+  def upup3,143
+  def downdown17,586
+
+test/dummy/db/migrate/20241022192404_remove_not_null_on_active_storage_blobs_checksum.active_storage.rb,152
+class RemoveNotNullOnActiveStorageBlobsChecksum < ActiveRecord::Migration[6.0]RemoveNotNullOnActiveStorageBlobsChecksum2,71
+  def changechange3,150
+
+test/dummy/log/test.log,0
+
+test/dummy/log/.keep,0
+
+test/dummy/log/development.log,0
+
+test/dummy/tmp/pids/.keep,0
+
+test/dummy/tmp/.keep,0
+
+test/dummy/tmp/storage/.keep,0
+
+test/dummy/tmp/local_secret.txt,0
+
+test/spinnaker/sidekiq_test.rb,67
+class Spinnaker::Sidekiq::Test < ActiveSupport::TestCaseTest3,23
+
+test/test_helper.rb,0
+
+test/controllers/spinnaker/sidekiq/api_controller_test.rb,147
+module SpinnakerSpinnaker3,23
+  module SidekiqSidekiq4,40
+    class ApiControllerTest < ActionDispatch::IntegrationTestApiControllerTest5,57
+
+bin/test,0
+
+bin/standardrb,0
+
+bin/rubocop,0
+
+bin/rails,245
+ENGINE_ROOT = File.expand_path("..", __dir__)ENGINE_ROOT5,146
+ENGINE_PATH = File.expand_path("../lib/spinnaker/sidekiq/engine", __dir__)ENGINE_PATH6,192
+APP_PATH = File.expand_path("../test/dummy/config/application", __dir__)APP_PATH7,267
+
+config/routes.rb,0
+
+gemfiles/rails_7.0.gemfile.lock,0
+
+gemfiles/rails_7.0.gemfile,0
+
+gemfiles/.bundle/config,0
+
+spinnaker-sidekiq.gemspec,55
+  s.name = "spinnaker-sidekiq"spinnaker-sidekiq8,194
+
+.tool-versions,0
+
+.byebug_history,0
+
+script/test,0
+
+TAGS,0
+
+README.md,163
+# Spinnaker::SidekiqSpinnaker::Sidekiq1,0
+## InstallationInstallation5,106
+## UsageUsage22,317
+## ContributingContributing48,938
+## LicenseLicense51,988
+
+Rakefile,168
+APP_RAKEFILE = File.expand_path("../test/dummy/Rakefile", __FILE__)APP_RAKEFILE17,367
+Rake::TestTask.new(:test) do |t|test28,582
+task default: :testdefault34,693
+
+.github/workflows/ci.yml,0
+
+lib/tasks/spinnaker/sidekiq_tasks.rake,0
+
+lib/spinnaker/sidekiq/engine.rb,108
+module SpinnakerSpinnaker1,0
+  module SidekiqSidekiq2,17
+    class Engine < ::Rails::EngineEngine3,34
+
+lib/spinnaker/sidekiq/version.rb,96
+module SpinnakerSpinnaker1,0
+  module SidekiqSidekiq2,17
+    VERSION = "0.2.0"VERSION3,34
+
+lib/spinnaker/sidekiq.rb,677
+module SpinnakerSpinnaker3,36
+  module SidekiqSidekiq4,53
+    class MissingApiToken < StandardErrorMissingApiToken5,70
+      def initialize(msg = "Set SPINNAKER_SIDEKIQ_API_TOKEN environment variable or Spinnaker::Sinitialize6,112
+      attr_writer :api_token, :shutdown_signal_ttl, :terminate_callbackapi_token=12,278
+      attr_writer :api_token, :shutdown_signal_ttl, :terminate_callbackshutdown_signal_ttl=12,278
+      attr_writer :api_token, :shutdown_signal_ttl, :terminate_callbackterminate_callback=12,278
+      def api_tokenapi_token14,351
+      def shutdown_signal_ttlshutdown_signal_ttl18,472
+      def terminate_callbackterminate_callback22,606
+
+Gemfile,0
+
+.rubocop.yml,0
+
+Gemfile.lock,0
+
+MIT-LICENSE,0
+
+Appraisals,0
