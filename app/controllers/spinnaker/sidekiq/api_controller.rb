@@ -26,9 +26,18 @@ module Spinnaker
 
         busy_jobs = processes.sum { |process| process["busy"] }
 
-        status = busy_jobs == 0 ? "quiet" : "busy"
+        status = (busy_jobs == 0) ? "quiet" : "busy"
 
         render json: {status: status, progress: "Pending jobs: #{busy_jobs}"}
+      end
+
+      def terminate_all
+        ps = ::Sidekiq::ProcessSet.new
+        ps.each(&:quiet!)
+        ::Sidekiq.redis { |conn|
+          conn.publish("sidekiq:terminate", Time.now.to_i)
+        }
+        render plain: "Terminate signal sent to Sidekiq workers"
       end
 
       private
